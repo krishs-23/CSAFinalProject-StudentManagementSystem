@@ -143,6 +143,10 @@ public class SystemManager {
                 String[] data = line.split(",");
                 if (data.length < 4) continue;
 
+                for (int i = 0; i < data.length; i++) {
+                    data[i] = data[i].replace("\"", "").trim();
+                }
+
                 String id = data[0].trim();
                 String name = data[1].trim();
                 int gradeLevel = Integer.parseInt(data[2].trim());
@@ -243,7 +247,7 @@ public class SystemManager {
      * @return string containing the report
      */
     public String generateReport() {
-        StringBuilder report = new StringBuilder("Student Management System Report\n");
+        StringBuilder report = new StringBuilder("\nStudent Management System Report\n");
         report.append("====================================\n");
         report.append("Total Students: ").append(this.students.size()).append("\n");
         report.append("Total Enrollments: ").append(this.totalEnrollments).append("\n\n");

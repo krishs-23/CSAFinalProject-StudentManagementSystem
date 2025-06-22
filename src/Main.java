@@ -56,7 +56,7 @@ public class Main {
         System.out.println("1. Manage Students (View, Add, Edit, Remove)");
         System.out.println("2. Import Students & Grades from CSV");
         System.out.println("3. Export Student Roster to CSV");
-        System.out.println("4. Curve Assignment Grades (Standalone Tool)");
+        System.out.println("4. Curve Assignment Grades");
         System.out.println("5. Generate Full System Report");
         System.out.println("6. Exit");
         System.out.print("Enter your choice: ");
@@ -203,7 +203,7 @@ public class Main {
     private static void handleAssignmentCurving() {
         AutoCurver curver = new AutoCurver();
 
-        System.out.println("\n--- Standalone Assignment Grade Curver ---");
+        System.out.println("\n--- Assignment Grade Curver ---");
         System.out.print("Enter the path to the input CSV with scores (Format: StudentID,Score): ");
         String inputFile = scanner.nextLine();
 

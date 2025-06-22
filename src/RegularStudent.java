@@ -26,26 +26,6 @@ public class RegularStudent extends SchoolEntity {
     }
 
     /**
-     * Enrolls the student in a class, adding it to their schedule.
-     * @param course the class to enroll in
-     */
-    public void enrollClass(Class course) {
-        if (course != null && !classes.stream().anyMatch(c -> c.getClassCode().equals(course.getClassCode()))) {
-            classes.add(course);
-            course.addStudent(this);
-        }
-    }
-
-    /**
-     * Calculates the student's GPA based on grades. This method is a placeholder,
-     * as the main calculation is handled by the overloaded version with parameters.
-     */
-    public void calculateGPA() {
-        // The main calculation is now handled by the overloaded version
-        // to ensure the gpa is always calculated with the full grade history.
-    }
-
-    /**
      * Calculates the student's GPA based on a list of all grade records in the system.
      * @param allGradeRecords A list of all grade records.
      */
@@ -65,6 +45,26 @@ public class RegularStudent extends SchoolEntity {
         } else {
             this.gpa = 0.0;
         }
+    }
+
+    /**
+     * Enrolls the student in a class, adding it to their schedule.
+     * @param course the class to enroll in
+     */
+    public void enrollClass(Class course) {
+        if (course != null && !classes.stream().anyMatch(c -> c.getClassCode().equals(course.getClassCode()))) {
+            classes.add(course);
+            course.addStudent(this);
+        }
+    }
+
+    /**
+     * Calculates the student's GPA based on grades. This method is a placeholder,
+     * as the main calculation is handled by the overloaded version with parameters.
+     */
+    public void calculateGPA() {
+        // The main calculation is now handled by the overloaded version
+        // to ensure the gpa is always calculated with the full grade history.
     }
 
     /**
