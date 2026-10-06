@@ -1,4 +1,3 @@
-# Final Project for APCSA
 # Student Management System
 
 ## Project Description
